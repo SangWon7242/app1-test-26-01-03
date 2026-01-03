@@ -15,7 +15,7 @@ export default function PostPage() {
     fetchPosts();
   }, []);
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div>
