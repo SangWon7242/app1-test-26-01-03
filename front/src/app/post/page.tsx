@@ -7,7 +7,9 @@ export default function PostPage() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const postResp = await fetch("http://localhost:8080/api/v1/posts");
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+      const postResp = await fetch(`${API_BASE_URL}/api/v1/posts`);
       const posts = await postResp.json();
       setPosts(posts);
     };
