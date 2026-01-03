@@ -17,6 +17,7 @@ public class Api1V1PostController {
 
   @GetMapping
   public List<Post> getItems() {
+    System.out.println("코드수정");
     return postService.getPosts();
   }
 }
