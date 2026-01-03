@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://sangwon7242-db.internal:5432/surl_prod # 운영환경 DB
     username: postgres
-    password: # 입력필요
+    password: ${custom.prod.db.password}
     driver-class-name: org.postgresql.Driver
     hikari:
       auto-commit: false
