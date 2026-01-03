@@ -72,7 +72,7 @@ public class AppConfig {
     return objectMapper;
   }
 
-  public static String getSiteFromUrl() {
+  public static String getSiteFrontUrl() {
     return siteFrontUrl;
   }
 

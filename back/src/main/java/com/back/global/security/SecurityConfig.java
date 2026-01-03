@@ -27,16 +27,13 @@ public class SecurityConfig {
             .requestMatchers(HttpMethod.GET, "/api/*/posts/{id:\\d+}").permitAll()
             .requestMatchers(HttpMethod.GET, "/api/*/posts").permitAll()
             .requestMatchers("/api/*/**").authenticated()
-            .anyRequest().permitAll()
-        )
+            .anyRequest().permitAll())
         .headers(headers -> headers
-            .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
-        )
+            .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
         .csrf(AbstractHttpConfigurer::disable)
         .formLogin(AbstractHttpConfigurer::disable)
         .sessionManagement(session -> session
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        )
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .cors(cors -> cors.configurationSource(corsConfigurationSource()));
 
     return http.build();
@@ -47,7 +44,7 @@ public class SecurityConfig {
     CorsConfiguration configuration = new CorsConfiguration();
 
     // 허용할 오리진 설정
-    configuration.setAllowedOrigins(List.of(AppConfig.getSiteFromUrl()));
+    configuration.setAllowedOrigins(List.of(AppConfig.getSiteFrontUrl()));
 
     // 허용할 HTTP 메서드 설정
     configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
