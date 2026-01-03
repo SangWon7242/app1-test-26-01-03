@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/posts")
-public class Ap1V1PostController {
+public class Api1V1PostController {
   private final PostService postService;
 
   @GetMapping
