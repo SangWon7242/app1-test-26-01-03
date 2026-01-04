@@ -1,9 +1,9 @@
 package com.back.domain.home.controller;
 
+import com.back.global.rq.Rq;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -11,7 +11,16 @@ import java.net.UnknownHostException;
 @RestController
 @Slf4j
 @RequestMapping("/")
+@RequiredArgsConstructor
 public class HomeController {
+  private final Rq rq;
+
+  @GetMapping("/cookie/{name}/{value}")
+  public String setCookie(@PathVariable String name, @PathVariable String value) {
+    rq.setCookie(name, value);
+
+    return "%s=%s".formatted(name, value);
+  }
 
   @GetMapping
   public String main() {
