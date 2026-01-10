@@ -29,7 +29,7 @@ public class HomeController {
     } catch (UnknownHostException e) {
       throw new RuntimeException(e);
     }
-    
+
     // log.info("Runs in any environment");
     log.debug("Run in dev/prod environments");
 
