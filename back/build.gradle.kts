@@ -30,6 +30,7 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-security")
   implementation("org.springframework.session:spring-session-data-redis")
   implementation("org.springframework.boot:spring-boot-starter-data-redis")
+  implementation("com.github.codemonstur:embedded-redis:1.4.3")
   testImplementation("org.springframework.security:spring-security-test")
   compileOnly("org.projectlombok:lombok")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
