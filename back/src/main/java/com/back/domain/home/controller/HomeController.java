@@ -71,7 +71,7 @@ public class HomeController {
   }
 
   @GetMapping("/session/{name}")
-  public String setSession(@PathVariable String name) {
+  public String getSession(@PathVariable String name) {
 
     String sessionValue = rq.getSessionValueAsStr(name);
 
