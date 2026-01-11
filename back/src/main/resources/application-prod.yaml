@@ -1,10 +1,10 @@
 spring:
   data:
     redis:
-      host: ${custom.prod.redis.host}
+      host: ${REDIS_HOST}
       port: 6379
       username: default
-      password: ${custom.prod.redis.password}
+      password: ${REDIS_PASSWORD}
       ssl:
         enabled: true
   autoconfigure:
