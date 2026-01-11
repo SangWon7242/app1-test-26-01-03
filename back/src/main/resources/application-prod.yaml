@@ -2,9 +2,11 @@ spring:
   data:
     redis:
       host: ${REDIS_HOST}
-      port: ${REDIS_PORT}
-      username: ${REDIS_USERNAME}
+      port: 6379
+      username: default
       password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: true
   autoconfigure:
     exclude:
   datasource:
