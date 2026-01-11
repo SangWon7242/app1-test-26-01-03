@@ -5,6 +5,8 @@ spring:
       port: 6379
       username: default
       password: ${REDIS_PASSWORD}
+      ssl:
+        enabled: false
   autoconfigure:
     exclude:
   datasource:
